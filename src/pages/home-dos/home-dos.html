@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Platillos
+    </ion-title>
+  <button (click)="bebidas()" ion-button icon-only>
+    <ion-icon class="arriba" name="md-beer"></ion-icon>
+  </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list *ngFor="let platillo of platillos | async">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src={{platillo.img}}>
+      </ion-thumbnail>
+      <h2>{{platillo.Nombre}}</h2>
+      <p>{{platillo.Sabor}}</p>
+      <p>{{platillo.Precio}}</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button color="primary" item-end (click)="openModal()" block>Agregar platillos</button>
+
+</ion-content>

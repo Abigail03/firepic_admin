@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Platillos
+    </ion-title>
+    <ion-icon class="user" name="ios-contact" [navPush]="principal"></ion-icon>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list *ngFor="let platillo of platillos | async">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src={{platillo.img}}>
+      </ion-thumbnail>
+      <h2>{{platillo.Nombre}}</h2>
+      <p>{{platillo.Sabor}}</p>
+      <p>{{platillo.Precio}}</p>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+
+ 
+</ion-content>
